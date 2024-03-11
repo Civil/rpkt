@@ -28,8 +28,7 @@ macro_rules! dpdk_offload_conf {
                 }
             )+
 
-            #[allow(dead_code)]
-            pub(crate) const ALL_ENABLED: Self = Self (
+            pub const ALL_ENABLED: Self = Self (
                 $(
                     (($init_val as $val_type) << $shift_val)
                 )|+

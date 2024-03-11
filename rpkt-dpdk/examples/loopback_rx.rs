@@ -12,9 +12,9 @@ use rpkt::udp::UdpPacket;
 use rpkt::CursorMut;
 
 // The socket to work on
-const WORKING_SOCKET: u32 = 1;
+const WORKING_SOCKET: u32 = 0;
 const THREAD_NUM: u32 = 2;
-const START_CORE: usize = 33;
+const START_CORE: usize = 15;
 
 // dpdk batch size
 const BATCH_SIZE: usize = 64;

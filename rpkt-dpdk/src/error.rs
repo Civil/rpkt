@@ -37,7 +37,10 @@ impl Error {
 impl fmt::Display for Error {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match &self.kind {
-            ErrorKind::ServiceError => write!(f, "Dpdk service error: {}.", self.msg),
+            ErrorKind::ServiceError => write!(
+                f,
+                "Dpdk service error: {}.",
+                self.msg),
             ErrorKind::FFIError(errno) => write!(
                 f,
                 "Dpdk FFI error (error number {}: {}): {}.",

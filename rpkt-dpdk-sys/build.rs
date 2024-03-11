@@ -56,6 +56,8 @@ fn build_dpdk_ffi() {
         .allowlist_function("rte_eth_dev_count_avail")
         .allowlist_function("rte_eth_macaddr_get")
         .allowlist_function("rte_eth_stats_get")
+        .allowlist_function("rte_eth_xstats_get")
+        .allowlist_function("rte_eth_xstats_get_names")
         .allowlist_function("rte_eth_dev_socket_id")
         .allowlist_function("rte_eth_dev_configure")
         .allowlist_function("rte_eth_dev_start")

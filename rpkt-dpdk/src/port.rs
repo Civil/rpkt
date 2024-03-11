@@ -380,7 +380,7 @@ impl Port {
         let rxq_ct = self
             .rxq_cts
             .get(usize::from(qid))
-            .ok_or(Error::service_err("invalid queue id"))?;
+            .ok_or(Error::service_err(format!("invalid rx queue id {}", qid).leak()))?;
 
         rxq_ct.0.clone_once()
     }
@@ -389,7 +389,7 @@ impl Port {
         let txq = self
             .txqs
             .get(usize::from(qid))
-            .ok_or(Error::service_err("invalid queue id"))?;
+            .ok_or(Error::service_err(format!("invalid tx queue id {}", qid).leak()))?;
 
         txq.clone_once()
     }
